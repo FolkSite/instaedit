@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Сделать абзац в инстаграм</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="В редакторе insta-edit.ru можно написать текст для постов в инстаграм с абзацами и пустыми строками>
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="manifest" href="img/site.webmanifest">
+  <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#2d89ef">
+  <meta name="msapplication-config" content="img/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:image" content="img/og-image.jpg">
+  <meta property="og:image:height" content="504">
+  <meta property="og:image:width" content="963">
+  <meta property="og:url" content="http://insta-edit.ru">
+  <meta property="og:description" content="Здесь без хлопот пишут посты в Instagram c эмоджи, абзацами и пустыми строками 🔥 Вход с &laquo;секретными пробелами&raquo; запрещен ⛔️">
+  <meta property="og:title" content="Редактор текста для постов в Instagram">
+</head>
+
+<body>
+  <template type="text/x-template" id="modal-template">
+    <transition name="modal">
+      <div class="overlay">
+        <div class="about">
+          <h1 class="about__title">Редактор текста для инстаграм</h1>
+          <p class="about__desc">Перед вами редактор текста для постов в Instagram. Здесь можно написать текст с абзацами и пустыми строками и в готовом виде скопировать его в ваш пост</p>
+          <a href="https://youtu.be/5CrRtmxbKmk" target="_blank" class="about__link">Смотреть видеоинструкцию</a>
+          <button class="about__btn" @click="$emit('close')">Написать пост</button>
+        </div>
+      </div>
+    </transition>
+  </template>
+  <div id="app">
+    <textarea id="input-text" v-model="input" @input="onInput" @keypress.prevent.enter="onEnter" placeholder="Здесь пишут тексты для постов в Instagram 🔥 Нажмите 1 раз Enter для новой строки и 2 раза для пустой строки.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       Чтобы скопировать текст в готовом варианте, нажмите на кнопку «Копировать» 😉"></textarea>
+    <span class="pull-right copy-text" id="copy" data-clipboard-target="#input-text">Копировать</span>
+    <a class="dev" @click="showModal = true">Помощь</a>
+    <a class="dev contact" href="https://www.instagram.com/qpz_here" target="_blank">Контакт</a>
+    <modal v-if="showModal" @close="showModal = false"></modal>
+  </div>
+  <script src="https://cdn.jsdelivr.net/clipboard.js/1.6.1/clipboard.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

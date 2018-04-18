@@ -1,0 +1,178 @@
+* {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Open Sans, Helvetica Neue, Arial, sans-serif;
+}
+
+#app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+#input-text {
+  width: 100%;
+  height: 100vh;
+  line-height: 1.4;
+  border: 0;
+  outline: none;
+  background: #f7f7f7;
+  padding: 15px 80px 15px 15px;
+}
+
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder,
+:-moz-placeholder {
+  color: #000000;
+  opacity: .75;
+}
+
+#copy {
+  position: absolute;
+  color: #007AFF;
+  border: 1px solid #007AFF;
+  right: 10px;
+  top: 10px;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+#copy:hover {
+  background: #007AFF;
+  color: white;
+}
+
+.about {
+  position: absolute;
+  width: 500px;
+  padding: 30px 40px;
+  height: auto;
+  z-index: 20;
+  background: #fff;
+  border-radius: 5px;
+  top: 50%;
+  right: 50%;
+  margin-top: -119px;
+  margin-right: -250px;
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, .5);
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  -webkit-transition: .5s all ease;
+  -o-transition: .5s all ease;
+  transition: .5s all ease
+}
+
+.about__title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.about__desc {
+  line-height: 1.25em;
+  margin-bottom: 10px;
+}
+
+.about__link {
+  text-decoration: none;
+  color: #007AFF;
+  border-bottom: 1px solid rgba(0, 122, 255, 0.4);
+}
+
+.about__btn {
+  margin-top: 30px;
+  display: block;
+  padding: 10px 15px;
+  background: #007AFF;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.dev {
+  color: #CDCDCD;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.contact {
+  right: 80px
+}
+
+#modal {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+  -webkit-transition: .5s all ease;
+  -o-transition: .5s all ease;
+  transition: .5s all ease
+}
+
+@media (min-width: 300px) and (max-width: 768px) {
+  #input-text {
+    height: 100vh;
+    padding: 15px;
+  }
+  #copy {
+    left: 10px;
+    bottom: 10px;
+    right: inherit;
+    top: inherit;
+}
+  .about {
+    width: 280px;
+    padding: 15px 20px;
+    margin-top: -150px;
+    margin-right: -140px;
+  }
+  .about__title {
+    font-size: 16px;
+  }
+  .about__desc {
+    font-size: 14px;
+  }
+  .about__link {
+    font-size: 14px;
+  }
+  .about__btn {
+    font-size: 14px;
+  }
+}
